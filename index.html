@@ -55,10 +55,10 @@
             height: 48px;
             border-radius: 16px;
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.95));
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.28);
             border-bottom: 3px solid rgba(0, 0, 0, 0.6);
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -71,8 +71,8 @@
 
         .top-icon-btn:hover {
             transform: translateY(-2px) scale(1.06);
-            border-color: rgba(56, 189, 248, 0.7);
-            box-shadow: 0 12px 26px rgba(56, 189, 248, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            border-color: rgba(56, 189, 248, 0.8);
+            box-shadow: 0 12px 26px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
         }
 
         .top-icon-btn:active {
@@ -84,7 +84,7 @@
             background: linear-gradient(135deg, #ef4444, #3b82f6, #a855f7, #22c55e);
         }
 
-        /* Уголок изменения размера (Resize Handle) */
+        /* Уголок изменения размера */
         .resize-handle {
             position: absolute;
             right: 4px;
@@ -98,7 +98,6 @@
             padding: 3px;
             color: rgba(255, 255, 255, 0.45);
             font-size: 12px;
-            line-height: 1;
             user-select: none;
             touch-action: none;
             z-index: 30;
@@ -110,16 +109,16 @@
             transform: scale(1.15);
         }
 
-        /* Перетаскиваемые и масштабируемые всплывающие окна */
+        /* Всплывающие окна */
         .popup-window {
             position: fixed;
             top: 78px;
             right: 20px;
             background: rgba(15, 23, 42, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.24);
+            border: 1px solid rgba(255, 255, 255, 0.26);
             border-radius: 20px;
             padding: 14px 16px 20px;
-            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(18px);
             display: none;
             flex-direction: column;
@@ -201,11 +200,11 @@
             min-height: 360px;
             max-width: 95vw;
             max-height: 92vh;
-            background: rgba(15, 23, 42, 0.84);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 20px 28px 28px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 32px;
+            padding: 22px 28px 28px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.82), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             text-align: center;
@@ -217,7 +216,7 @@
 
         .main-card.jackpot-glow {
             border-color: #facc15;
-            box-shadow: 0 0 55px rgba(250, 204, 21, 0.55), inset 0 0 25px rgba(250, 204, 21, 0.2);
+            box-shadow: 0 0 60px rgba(250, 204, 21, 0.55), inset 0 0 25px rgba(250, 204, 21, 0.25);
         }
 
         .main-drag-handle {
@@ -236,7 +235,7 @@
         .drag-pill {
             width: 48px;
             height: 5px;
-            background: rgba(255, 255, 255, 0.28);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 99px;
             margin: 0 auto 10px;
             transition: background 0.2s, width 0.2s;
@@ -248,7 +247,7 @@
         }
 
         h1 {
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             font-weight: 900;
             margin-bottom: 4px;
             letter-spacing: 0.5px;
@@ -312,7 +311,7 @@
             -webkit-appearance: none;
             background-color: rgba(30, 41, 59, 0.92);
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: 14px;
             padding: 10px 30px 10px 12px;
             font-size: 0.86rem;
@@ -342,7 +341,7 @@
             color: #ffffff;
         }
 
-        /* Статус-бар комбо / подсказки */
+        /* Баннер комбо/событий */
         .combo-banner {
             min-height: 22px;
             font-size: 0.78rem;
@@ -359,7 +358,7 @@
             transform: scale(1.05);
         }
 
-        /* Арена кубиков (гибко подстраивается под размер окна) */
+        /* Арена кубиков */
         .dice-arena {
             flex: 1;
             min-height: 110px;
@@ -377,48 +376,21 @@
             width: var(--dice-size, 80px);
             height: var(--dice-size, 80px);
             border-radius: 22%;
-            border: 3px solid rgba(255, 255, 255, 0.92);
+            border: 3px solid rgba(255, 255, 255, 0.95);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.48), inset 0 2px 6px rgba(255, 255, 255, 0.35);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), inset 0 2px 6px rgba(255, 255, 255, 0.4);
             position: relative;
             user-select: none;
-            cursor: pointer;
             transition: background-color 0.07s linear, transform 0.18s ease, box-shadow 0.2s ease;
             animation-duration: var(--anim-dur, 0.45s);
             animation-fill-mode: both;
         }
 
-        .dice:hover {
-            transform: translateY(-3px) scale(1.04);
-        }
-
-        .dice.pinned {
-            border-color: #facc15;
-            box-shadow: 0 0 22px rgba(250, 204, 21, 0.65), inset 0 0 10px rgba(250, 204, 21, 0.4);
-        }
-
-        .dice.pinned::after {
-            content: '🔒';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            font-size: 0.9rem;
-            background: #0f172a;
-            border: 1px solid #facc15;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-        }
-
         .dice.rolling {
             animation: diceShake 0.13s infinite alternate ease-in-out;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.45);
+            box-shadow: 0 0 22px rgba(255, 255, 255, 0.5);
         }
 
         @keyframes diceShake {
@@ -462,11 +434,11 @@
 
         .anim-flash { animation-name: animFlash; animation-timing-function: ease-out; }
         @keyframes animFlash {
-            0% { transform: scale(1.32); filter: brightness(2.2); }
+            0% { transform: scale(1.32); filter: brightness(2.3); }
             100% { transform: scale(1); filter: brightness(1); }
         }
 
-        /* Улучшенный дизайн кнопок (3D + неоновый блик) */
+        /* Улучшенные тактильные кнопки */
         .buttons-wrapper {
             flex-shrink: 0;
         }
@@ -479,11 +451,11 @@
             letter-spacing: 0.08em;
             color: #ffffff;
             background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.32);
             border-bottom: 4px solid rgba(30, 27, 75, 0.85);
             border-radius: 18px;
             cursor: pointer;
-            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.48), inset 0 1px 1px rgba(255, 255, 255, 0.4);
             margin-bottom: 12px;
             position: relative;
             overflow: hidden;
@@ -497,7 +469,7 @@
             left: -100%;
             width: 60%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
             transition: left 0.55s ease;
         }
 
@@ -508,7 +480,7 @@
         #rollBtn:hover {
             filter: brightness(1.1);
             transform: translateY(-2px);
-            box-shadow: 0 16px 34px rgba(99, 102, 241, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+            box-shadow: 0 16px 34px rgba(99, 102, 241, 0.62), inset 0 1px 1px rgba(255, 255, 255, 0.5);
         }
 
         #rollBtn:active {
@@ -527,12 +499,12 @@
             font-size: 0.88rem;
             font-weight: 700;
             color: #f8fafc;
-            background: linear-gradient(180deg, rgba(51, 65, 85, 0.85) 0%, rgba(30, 41, 59, 0.95) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(180deg, rgba(51, 65, 85, 0.88) 0%, rgba(30, 41, 59, 0.96) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.22);
             border-bottom: 3px solid rgba(15, 23, 42, 0.9);
             border-radius: 15px;
             cursor: pointer;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
             transition: all 0.16s ease;
             display: flex;
             align-items: center;
@@ -541,10 +513,10 @@
         }
 
         .speed-btn:hover {
-            background: linear-gradient(180deg, rgba(71, 85, 105, 0.95) 0%, rgba(30, 41, 59, 1) 100%);
-            border-color: rgba(56, 189, 248, 0.6);
+            background: linear-gradient(180deg, rgba(71, 85, 105, 0.96) 0%, rgba(30, 41, 59, 1) 100%);
+            border-color: rgba(56, 189, 248, 0.7);
             transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(56, 189, 248, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 22px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.28);
         }
 
         .speed-btn:active {
@@ -554,14 +526,14 @@
 
         .btn-active-mode {
             border-color: #38bdf8 !important;
-            background: linear-gradient(180deg, rgba(14, 165, 233, 0.35) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
-            box-shadow: 0 0 18px rgba(56, 189, 248, 0.55) !important;
+            background: linear-gradient(180deg, rgba(14, 165, 233, 0.38) 0%, rgba(30, 41, 59, 0.96) 100%) !important;
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.58) !important;
         }
 
         .auto-active {
             border-color: #22c55e !important;
             color: #86efac !important;
-            box-shadow: 0 0 18px rgba(34, 197, 94, 0.5) !important;
+            box-shadow: 0 0 18px rgba(34, 197, 94, 0.52) !important;
         }
 
         /* История бросков */
@@ -750,7 +722,7 @@
     <input type="file" id="bgImageInput" accept="image/*">
     <input type="file" id="bgVideoInput" accept="video/*">
 
-    <!-- Главная перетаскиваемая и масштабируемая карточка -->
+    <!-- Главная карточка -->
     <div class="main-card" id="mainCard">
         <div class="main-drag-handle" data-drag-target="mainCard" title="Потяните за верх, чтобы двигать окно">
             <div class="drag-pill"></div>
@@ -785,7 +757,7 @@
             </div>
         </div>
 
-        <div class="combo-banner" id="comboBanner">Нажми на кубик, чтобы закрепить цвет 🔒</div>
+        <div class="combo-banner" id="comboBanner">Собери одинаковые цвета для джекпота! 🔥</div>
 
         <div id="diceArena" class="dice-arena"></div>
 
@@ -856,9 +828,6 @@
         let rollHistory = [];
         let topZIndex = 65;
 
-        // Хранение закреплённых кубиков по индексу
-        let pinnedDice = {};
-
         function bringToFront(el) {
             if (!el || el.id === 'mainCard') return;
             topZIndex++;
@@ -870,7 +839,7 @@
             win.addEventListener('touchstart', () => bringToFront(win), { passive: true });
         });
 
-        // ================= ПЕРЕТАСКИВАНИЕ ОКОН (DRAG) =================
+        // Перетаскивание окон
         document.querySelectorAll('[data-drag-target]').forEach(handle => {
             const targetId = handle.getAttribute('data-drag-target');
             const targetEl = document.getElementById(targetId);
@@ -912,16 +881,13 @@
                 targetEl.style.top = newTop + 'px';
             }
 
-            function onEnd() {
-                isDragging = false;
-            }
+            function onEnd() { isDragging = false; }
 
             handle.addEventListener('mousedown', (e) => {
                 if (e.target.closest('button, a, input, select')) return;
                 e.preventDefault();
                 onStart(e.clientX, e.clientY);
             });
-
             window.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY));
             window.addEventListener('mouseup', onEnd);
 
@@ -930,17 +896,15 @@
                 const t = e.touches[0];
                 onStart(t.clientX, t.clientY);
             }, { passive: true });
-
             window.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
                 const t = e.touches[0];
                 onMove(t.clientX, t.clientY);
             }, { passive: true });
-
             window.addEventListener('touchend', onEnd);
         });
 
-        // ================= ИЗМЕНЕНИЕ РАЗМЕРА ОКОН (RESIZE) =================
+        // Изменение размера окон
         function updateDiceScale() {
             const w = mainCard.offsetWidth;
             const h = mainCard.offsetHeight;
@@ -962,69 +926,39 @@
                 isResizing = true;
                 bringToFront(targetEl);
                 const rect = targetEl.getBoundingClientRect();
-
                 targetEl.style.position = 'fixed';
                 targetEl.style.margin = '0';
                 targetEl.style.left = rect.left + 'px';
                 targetEl.style.top = rect.top + 'px';
                 targetEl.style.right = 'auto';
                 targetEl.style.bottom = 'auto';
-
-                startX = clientX;
-                startY = clientY;
-                startW = rect.width;
-                startH = rect.height;
+                startX = clientX; startY = clientY;
+                startW = rect.width; startH = rect.height;
             }
 
             function onResizeMove(clientX, clientY) {
                 if (!isResizing) return;
                 const newW = Math.max(240, Math.min(window.innerWidth - 20, startW + (clientX - startX)));
                 const newH = Math.max(180, Math.min(window.innerHeight - 20, startH + (clientY - startY)));
-
                 targetEl.style.width = newW + 'px';
                 targetEl.style.height = newH + 'px';
-
-                if (targetEl.id === 'mainCard') {
-                    updateDiceScale();
-                }
+                if (targetEl.id === 'mainCard') updateDiceScale();
             }
 
-            function onResizeEnd() {
-                isResizing = false;
-            }
+            function onResizeEnd() { isResizing = false; }
 
-            resizer.addEventListener('mousedown', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                onResizeStart(e.clientX, e.clientY);
-            });
-
+            resizer.addEventListener('mousedown', (e) => { e.preventDefault(); e.stopPropagation(); onResizeStart(e.clientX, e.clientY); });
             window.addEventListener('mousemove', (e) => onResizeMove(e.clientX, e.clientY));
             window.addEventListener('mouseup', onResizeEnd);
-
-            resizer.addEventListener('touchstart', (e) => {
-                e.stopPropagation();
-                const t = e.touches[0];
-                onResizeStart(t.clientX, t.clientY);
-            }, { passive: true });
-
-            window.addEventListener('touchmove', (e) => {
-                if (!isResizing) return;
-                const t = e.touches[0];
-                onResizeMove(t.clientX, t.clientY);
-            }, { passive: true });
-
+            resizer.addEventListener('touchstart', (e) => { e.stopPropagation(); const t = e.touches[0]; onResizeStart(t.clientX, t.clientY); }, { passive: true });
+            window.addEventListener('touchmove', (e) => { if (!isResizing) return; const t = e.touches[0]; onResizeMove(t.clientX, t.clientY); }, { passive: true });
             window.addEventListener('touchend', onResizeEnd);
         });
 
         function togglePopup(popup) {
             const isOpen = popup.classList.contains('open');
-            if (!isOpen) {
-                popup.classList.add('open');
-                bringToFront(popup);
-            } else {
-                popup.classList.remove('open');
-            }
+            if (!isOpen) { popup.classList.add('open'); bringToFront(popup); }
+            else { popup.classList.remove('open'); }
         }
 
         historyToggleBtn.addEventListener('click', () => togglePopup(historyPopup));
@@ -1033,43 +967,31 @@
 
         document.querySelectorAll('[data-close]').forEach(btn => {
             btn.addEventListener('click', () => {
-                const id = btn.getAttribute('data-close');
-                const el = document.getElementById(id);
-                if (el) el.classList.remove('open');
+                document.getElementById(btn.getAttribute('data-close'))?.classList.remove('open');
             });
         });
 
-        // Сброс позиции и размера всех окон
         document.getElementById('resetPosBtn').addEventListener('click', () => {
             mainCard.style.position = 'relative';
-            mainCard.style.left = '';
-            mainCard.style.top = '';
-            mainCard.style.width = '560px';
-            mainCard.style.height = '';
+            mainCard.style.left = ''; mainCard.style.top = '';
+            mainCard.style.width = '560px'; mainCard.style.height = '';
             updateDiceScale();
-
             const offsets = [138, 78, 18];
             ['historyPopup', 'volumePopup', 'palettePopup'].forEach((id, i) => {
                 const w = document.getElementById(id);
-                w.style.left = 'auto';
-                w.style.top = '78px';
-                w.style.right = offsets[i] + 'px';
-                w.style.width = '290px';
-                w.style.height = '';
+                w.style.left = 'auto'; w.style.top = '78px'; w.style.right = offsets[i] + 'px';
+                w.style.width = '290px'; w.style.height = '';
             });
         });
 
-        // ================= ИСТОРИЯ БРОСКОВ =================
-        clearHistoryBtn.addEventListener('click', () => {
-            rollHistory = [];
-            updateHistoryUI();
-        });
+        // История бросков
+        clearHistoryBtn.addEventListener('click', () => { rollHistory = []; updateHistoryUI(); });
 
-        function addCurrentRollToHistory(rolledDiceData, mode, isCombo) {
+        function addCurrentRollToHistory(rolledData, mode, isCombo) {
             const now = new Date();
             const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             const modeLabel = mode === 'fast' ? '⚡' : mode === 'slow' ? '🐢' : '🎲';
-            rollHistory.unshift({ time: timeStr, dice: rolledDiceData, modeLabel, isCombo });
+            rollHistory.unshift({ time: timeStr, dice: rolledData, modeLabel, isCombo });
             if (rollHistory.length > 25) rollHistory.length = 25;
             updateHistoryUI();
         }
@@ -1079,15 +1001,12 @@
                 historyList.innerHTML = '<div style="color: #94a3b8; font-size: 0.8rem; text-align: center; padding: 10px;">Бросков еще не было</div>';
                 return;
             }
-
             historyList.innerHTML = '';
             rollHistory.forEach(item => {
                 const el = document.createElement('div');
                 el.className = 'history-item' + (item.isCombo ? ' combo-hit' : '');
-
                 const colorsContainer = document.createElement('div');
                 colorsContainer.className = 'history-colors';
-
                 item.dice.forEach(d => {
                     const dot = document.createElement('div');
                     dot.className = 'history-dot';
@@ -1095,75 +1014,43 @@
                     dot.title = d.name;
                     colorsContainer.appendChild(dot);
                 });
-
                 const rightBox = document.createElement('div');
-                rightBox.style.display = 'flex';
-                rightBox.style.alignItems = 'center';
-                rightBox.style.gap = '6px';
-
+                rightBox.style.display = 'flex'; rightBox.style.alignItems = 'center'; rightBox.style.gap = '6px';
                 if (item.isCombo) {
                     const comboTag = document.createElement('span');
-                    comboTag.className = 'history-badge';
-                    comboTag.style.color = '#facc15';
-                    comboTag.textContent = '🔥 КОМБО';
-                    rightBox.appendChild(comboTag);
+                    comboTag.className = 'history-badge'; comboTag.style.color = '#facc15';
+                    comboTag.textContent = '🔥 КОМБО'; rightBox.appendChild(comboTag);
                 }
-
-                const badge = document.createElement('span');
-                badge.className = 'history-badge';
-                badge.textContent = item.modeLabel;
-
-                const timeEl = document.createElement('span');
-                timeEl.style.color = '#94a3b8';
-                timeEl.style.fontSize = '0.74rem';
-                timeEl.textContent = item.time;
-
-                rightBox.appendChild(badge);
-                rightBox.appendChild(timeEl);
-
-                el.appendChild(colorsContainer);
-                el.appendChild(rightBox);
+                const badge = document.createElement('span'); badge.className = 'history-badge'; badge.textContent = item.modeLabel;
+                const timeEl = document.createElement('span'); timeEl.style.color = '#94a3b8'; timeEl.style.fontSize = '0.74rem'; timeEl.textContent = item.time;
+                rightBox.appendChild(badge); rightBox.appendChild(timeEl);
+                el.appendChild(colorsContainer); el.appendChild(rightBox);
                 historyList.appendChild(el);
             });
         }
 
-        // ================= ЗВУКИ =================
+        // Звуки
         function stopAllSounds() {
-            if (stopSoundTimeout) {
-                clearTimeout(stopSoundTimeout);
-                stopSoundTimeout = null;
-            }
-            if (customAudio) {
-                customAudio.pause();
-                customAudio.currentTime = 0;
-            }
-            activeOscillators.forEach(osc => {
-                try { osc.stop(); } catch (e) {}
-            });
+            if (stopSoundTimeout) { clearTimeout(stopSoundTimeout); stopSoundTimeout = null; }
+            if (customAudio) { customAudio.pause(); customAudio.currentTime = 0; }
+            activeOscillators.forEach(osc => { try { osc.stop(); } catch (e) {} });
             activeOscillators = [];
         }
 
         function playTickSound(pitchOffset = 0) {
             const soundType = soundSelect.value;
             if (soundType === 'mute' || soundType === 'upload_sound') return;
-
             const vol = parseFloat(volumeRange.value) * 0.4;
             if (vol <= 0) return;
-
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             if (audioCtx.state === 'suspended') audioCtx.resume();
-
             const now = audioCtx.currentTime;
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(520 + pitchOffset, now);
-            gain.gain.setValueAtTime(vol * 0.25, now);
-            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start(now);
-            osc.stop(now + 0.035);
+            osc.type = 'sine'; osc.frequency.setValueAtTime(520 + pitchOffset, now);
+            gain.gain.setValueAtTime(vol * 0.25, now); gain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(now); osc.stop(now + 0.035);
             activeOscillators.push(osc);
         }
 
@@ -1171,184 +1058,108 @@
             stopAllSounds();
             const soundType = soundSelect.value;
             if (soundType === 'mute' || soundType === 'upload_sound') return;
-
             const vol = parseFloat(volumeRange.value);
             const cutTime = speed === 'fast' ? 200 : speed === 'step' ? 320 : 480;
 
             if (soundType === 'custom' && customAudio) {
-                customAudio.volume = vol;
-                customAudio.play().catch(() => {});
+                customAudio.volume = vol; customAudio.play().catch(() => {});
                 stopSoundTimeout = setTimeout(() => stopAllSounds(), cutTime);
                 return;
             }
-
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             if (audioCtx.state === 'suspended') audioCtx.resume();
-
             const now = audioCtx.currentTime;
 
             if (soundType === 'bubble') {
-                const count = speed === 'step' ? 1 : 4;
-                for (let idx = 0; idx < count; idx++) {
+                for (let idx = 0; idx < 4; idx++) {
                     const delay = idx * 0.08;
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(320 + idx * 140, now + delay);
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'sine'; osc.frequency.setValueAtTime(320 + idx * 140, now + delay);
                     osc.frequency.exponentialRampToValueAtTime(720 + idx * 160, now + delay + 0.07);
-                    gain.gain.setValueAtTime(0.25 * vol, now + delay);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.08);
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    osc.start(now + delay);
-                    osc.stop(now + delay + 0.09);
-                    activeOscillators.push(osc);
+                    gain.gain.setValueAtTime(0.25 * vol, now + delay); gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.08);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(now + delay); osc.stop(now + delay + 0.09); activeOscillators.push(osc);
                 }
             } else if (soundType === 'dice') {
-                const count = speed === 'step' ? 1 : 4;
-                for (let idx = 0; idx < count; idx++) {
+                for (let idx = 0; idx < 4; idx++) {
                     const delay = idx * 0.07;
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'triangle';
-                    osc.frequency.setValueAtTime(280 + idx * 65, now + delay);
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'triangle'; osc.frequency.setValueAtTime(280 + idx * 65, now + delay);
                     osc.frequency.exponentialRampToValueAtTime(90, now + delay + 0.06);
-                    gain.gain.setValueAtTime(0.3 * vol, now + delay);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.06);
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    osc.start(now + delay);
-                    osc.stop(now + delay + 0.065);
-                    activeOscillators.push(osc);
+                    gain.gain.setValueAtTime(0.3 * vol, now + delay); gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.06);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(now + delay); osc.stop(now + delay + 0.065); activeOscillators.push(osc);
                 }
             } else if (soundType === 'roulette') {
-                const ticks = speed === 'step' ? 2 : 8;
-                for (let i = 0; i < ticks; i++) {
+                for (let i = 0; i < 8; i++) {
                     const delay = i * 0.03;
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(800, now + delay);
-                    gain.gain.setValueAtTime(0.2 * vol, now + delay);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.025);
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    osc.start(now + delay);
-                    osc.stop(now + delay + 0.03);
-                    activeOscillators.push(osc);
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'sine'; osc.frequency.setValueAtTime(800, now + delay);
+                    gain.gain.setValueAtTime(0.2 * vol, now + delay); gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.025);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(now + delay); osc.stop(now + delay + 0.03); activeOscillators.push(osc);
                 }
             } else if (soundType === 'magic') {
-                const notes = speed === 'step' ? [783.99] : [523.25, 659.25, 783.99, 1046.50];
-                notes.forEach((freq, idx) => {
+                [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
                     const delay = idx * 0.06;
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(freq, now + delay);
-                    gain.gain.setValueAtTime(0.18 * vol, now + delay);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.22);
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    osc.start(now + delay);
-                    osc.stop(now + delay + 0.24);
-                    activeOscillators.push(osc);
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'sine'; osc.frequency.setValueAtTime(freq, now + delay);
+                    gain.gain.setValueAtTime(0.18 * vol, now + delay); gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.22);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(now + delay); osc.stop(now + delay + 0.24); activeOscillators.push(osc);
                 });
             } else if (soundType === 'retro') {
-                const notes = speed === 'step' ? [523.25] : [261.63, 329.63, 392.00, 523.25];
-                notes.forEach((freq, idx) => {
+                [261.63, 329.63, 392.00, 523.25].forEach((freq, idx) => {
                     const delay = idx * 0.05;
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'square';
-                    osc.frequency.setValueAtTime(freq, now + delay);
-                    gain.gain.setValueAtTime(0.1 * vol, now + delay);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.06);
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    osc.start(now + delay);
-                    osc.stop(now + delay + 0.065);
-                    activeOscillators.push(osc);
+                    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                    osc.type = 'square'; osc.frequency.setValueAtTime(freq, now + delay);
+                    gain.gain.setValueAtTime(0.1 * vol, now + delay); gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.06);
+                    osc.connect(gain); gain.connect(audioCtx.destination);
+                    osc.start(now + delay); osc.stop(now + delay + 0.065); activeOscillators.push(osc);
                 });
             } else if (soundType === 'space') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(220, now);
+                const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+                osc.type = 'sine'; osc.frequency.setValueAtTime(220, now);
                 osc.frequency.exponentialRampToValueAtTime(880, now + 0.22);
-                gain.gain.setValueAtTime(0.25 * vol, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.26);
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start(now);
-                osc.stop(now + 0.28);
-                activeOscillators.push(osc);
+                gain.gain.setValueAtTime(0.25 * vol, now); gain.gain.exponentialRampToValueAtTime(0.001, now + 0.26);
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.start(now); osc.stop(now + 0.28); activeOscillators.push(osc);
             }
         }
 
-        // ================= ЛОГИКА РОЛЛОВ И КОМБО =================
+        // Логика роллов
         function clearActiveRollProcesses() {
-            activeTimers.forEach(id => clearTimeout(id));
-            activeTimers = [];
-            activeIntervals.forEach(id => clearInterval(id));
-            activeIntervals = [];
+            activeTimers.forEach(id => clearTimeout(id)); activeTimers = [];
+            activeIntervals.forEach(id => clearInterval(id)); activeIntervals = [];
             rollBtn.classList.remove('btn-active-mode');
             fastRollBtn.classList.remove('btn-active-mode');
             slowRollBtn.classList.remove('btn-active-mode');
         }
 
         function getRandomColor(excludeHex = null) {
-            let pool = diceColors;
-            if (excludeHex) {
-                pool = diceColors.filter(c => c.hex !== excludeHex);
-            }
+            let pool = excludeHex ? diceColors.filter(c => c.hex !== excludeHex) : diceColors;
             return pool[Math.floor(Math.random() * pool.length)];
         }
 
         function checkCombo(finalColors) {
             mainCard.classList.remove('jackpot-glow');
-            if (finalColors.length >= 3) {
-                const allSame = finalColors.every(c => c.hex === finalColors[0].hex);
-                if (allSame) {
-                    mainCard.classList.add('jackpot-glow');
-                    comboBanner.textContent = `🔥 ДЖЕКПОТ! ВСЕ ${finalColors.length} КУБИКА — ${finalColors[0].name}!`;
-                    comboBanner.classList.add('win');
-                    return true;
-                }
+            if (finalColors.length >= 3 && finalColors.every(c => c.hex === finalColors[0].hex)) {
+                mainCard.classList.add('jackpot-glow');
+                comboBanner.textContent = `🔥 ДЖЕКПОТ! ВСЕ КУБИКИ — ${finalColors[0].name}!`;
+                comboBanner.classList.add('win');
+                return true;
             }
             comboBanner.classList.remove('win');
-            const pinnedCount = Object.keys(pinnedDice).length;
-            comboBanner.textContent = pinnedCount > 0
-                ? `Закреплено кубиков: ${pinnedCount} (кликни, чтобы снять 🔒)`
-                : 'Нажми на кубик, чтобы закрепить цвет 🔒';
+            comboBanner.textContent = 'Собери одинаковые цвета для джекпота! 🔥';
             return false;
         }
 
-        function createBaseDice(index, colorObj) {
+        function createBaseDice() {
             const diceEl = document.createElement('div');
             diceEl.className = 'dice';
-            if (pinnedDice[index]) diceEl.classList.add('pinned');
-
             const dot = document.createElement('div');
             dot.className = 'dice-dot';
             diceEl.appendChild(dot);
-
-            diceEl.addEventListener('click', () => {
-                if (diceEl.classList.contains('rolling')) return;
-                if (pinnedDice[index]) {
-                    delete pinnedDice[index];
-                    diceEl.classList.remove('pinned');
-                } else {
-                    pinnedDice[index] = colorObj;
-                    diceEl.classList.add('pinned');
-                }
-                playTickSound(240);
-                const pinnedCount = Object.keys(pinnedDice).length;
-                comboBanner.classList.remove('win');
-                comboBanner.textContent = pinnedCount > 0
-                    ? `Закреплено кубиков: ${pinnedCount} (кликни, чтобы снять 🔒)`
-                    : 'Нажми на кубик, чтобы закрепить цвет 🔒';
-            });
-
             return diceEl;
         }
 
@@ -1365,20 +1176,15 @@
             clearActiveRollProcesses();
             currentRollId++;
             const rollId = currentRollId;
-
             const count = parseInt(diceCountSelect.value, 10);
-            // Удаляем замки, если количество кубиков уменьшилось
-            Object.keys(pinnedDice).forEach(k => { if (parseInt(k, 10) >= count) delete pinnedDice[k]; });
-
             diceArena.innerHTML = '';
 
-            const finalColors = Array.from({ length: count }, (_, idx) => pinnedDice[idx] ? pinnedDice[idx] : getRandomColor());
+            const finalColors = Array.from({ length: count }, () => getRandomColor());
             const diceElements = [];
 
             for (let i = 0; i < count; i++) {
-                const el = createBaseDice(i, finalColors[i]);
-                el.style.backgroundColor = pinnedDice[i] ? pinnedDice[i].hex : getRandomColor().hex;
-                if (pinnedDice[i]) el.classList.add('locked');
+                const el = createBaseDice();
+                el.style.backgroundColor = getRandomColor().hex;
                 diceArena.appendChild(el);
                 diceElements.push(el);
             }
@@ -1386,16 +1192,8 @@
             if (mode === 'fast') {
                 fastRollBtn.classList.add('btn-active-mode');
                 if (withSound) playRollSound('fast');
-
-                diceElements.forEach((el, idx) => {
-                    if (!pinnedDice[idx]) finalizeDice(el, finalColors[idx], 0.16);
-                });
-
-                const t = setTimeout(() => {
-                    if (rollId === currentRollId) fastRollBtn.classList.remove('btn-active-mode');
-                }, 220);
-                activeTimers.push(t);
-
+                diceElements.forEach((el, idx) => finalizeDice(el, finalColors[idx], 0.16));
+                activeTimers.push(setTimeout(() => { if (rollId === currentRollId) fastRollBtn.classList.remove('btn-active-mode'); }, 220));
                 const isCombo = checkCombo(finalColors);
                 if (saveHistory) addCurrentRollToHistory(finalColors, 'fast', isCombo);
                 return;
@@ -1403,18 +1201,13 @@
 
             if (mode === 'normal') {
                 rollBtn.classList.add('btn-active-mode');
-                diceElements.forEach((el, idx) => {
-                    if (!pinnedDice[idx]) el.classList.add('rolling');
-                });
-
-                let lastColorHex = null;
+                diceElements.forEach(el => el.classList.add('rolling'));
+                let lastHex = null;
                 const shuffleInt = setInterval(() => {
                     if (rollId !== currentRollId) return;
-                    diceElements.forEach((el, idx) => {
-                        if (!pinnedDice[idx] && !el.classList.contains('locked')) {
-                            const nextCol = getRandomColor(lastColorHex);
-                            lastColorHex = nextCol.hex;
-                            el.style.backgroundColor = nextCol.hex;
+                    diceElements.forEach(el => {
+                        if (!el.classList.contains('locked')) {
+                            const c = getRandomColor(lastHex); lastHex = c.hex; el.style.backgroundColor = c.hex;
                         }
                     });
                     if (withSound) playTickSound(120);
@@ -1422,65 +1215,50 @@
                 activeIntervals.push(shuffleInt);
 
                 diceElements.forEach((el, idx) => {
-                    const stopDelay = 300 + idx * 75;
-                    const t = setTimeout(() => {
+                    activeTimers.push(setTimeout(() => {
                         if (rollId !== currentRollId) return;
                         if (idx === 0 && withSound) playRollSound('normal');
-                        if (!pinnedDice[idx]) finalizeDice(el, finalColors[idx], 0.42);
-
+                        finalizeDice(el, finalColors[idx], 0.42);
                         if (idx === count - 1) {
                             clearInterval(shuffleInt);
                             rollBtn.classList.remove('btn-active-mode');
                             const isCombo = checkCombo(finalColors);
                             if (saveHistory) addCurrentRollToHistory(finalColors, 'normal', isCombo);
                         }
-                    }, stopDelay);
-                    activeTimers.push(t);
+                    }, 300 + idx * 75));
                 });
                 return;
             }
 
             if (mode === 'slow') {
                 slowRollBtn.classList.add('btn-active-mode');
-                diceElements.forEach((el, idx) => {
-                    if (!pinnedDice[idx]) el.classList.add('rolling');
-                });
-
+                diceElements.forEach(el => el.classList.add('rolling'));
                 const bgShuffle = setInterval(() => {
                     if (rollId !== currentRollId) return;
-                    diceElements.forEach((el, idx) => {
-                        if (!pinnedDice[idx] && !el.classList.contains('locked')) {
-                            el.style.backgroundColor = getRandomColor().hex;
-                        }
-                    });
+                    diceElements.forEach(el => { if (!el.classList.contains('locked')) el.style.backgroundColor = getRandomColor().hex; });
                 }, 90);
                 activeIntervals.push(bgShuffle);
 
                 diceElements.forEach((el, idx) => {
                     const baseDelay = 520 + idx * 620;
-
-                    [baseDelay - 240, baseDelay - 120].forEach((tickTime, stepIdx) => {
-                        const tickTimer = setTimeout(() => {
-                            if (rollId !== currentRollId || pinnedDice[idx]) return;
+                    [baseDelay - 240, baseDelay - 120].forEach(t => {
+                        activeTimers.push(setTimeout(() => {
+                            if (rollId !== currentRollId) return;
                             el.style.backgroundColor = getRandomColor().hex;
-                            if (withSound) playTickSound(stepIdx * 150);
-                        }, tickTime);
-                        activeTimers.push(tickTimer);
+                            if (withSound) playTickSound(150);
+                        }, t));
                     });
-
-                    const lockTimer = setTimeout(() => {
+                    activeTimers.push(setTimeout(() => {
                         if (rollId !== currentRollId) return;
                         if (withSound) playRollSound('step');
-                        if (!pinnedDice[idx]) finalizeDice(el, finalColors[idx], 0.55);
-
+                        finalizeDice(el, finalColors[idx], 0.55);
                         if (idx === count - 1) {
                             clearInterval(bgShuffle);
                             slowRollBtn.classList.remove('btn-active-mode');
                             const isCombo = checkCombo(finalColors);
                             if (saveHistory) addCurrentRollToHistory(finalColors, 'slow', isCombo);
                         }
-                    }, baseDelay);
-                    activeTimers.push(lockTimer);
+                    }, baseDelay));
                 });
             }
         }
@@ -1489,27 +1267,18 @@
         fastRollBtn.addEventListener('click', () => rollDice(true, 'fast', true));
         slowRollBtn.addEventListener('click', () => rollDice(true, 'slow', true));
 
-        // Авто-ролл каждые 3 секунды
         autoRollBtn.addEventListener('click', () => {
             if (autoRollInterval) {
-                clearInterval(autoRollInterval);
-                autoRollInterval = null;
-                autoRollBtn.classList.remove('auto-active');
-                autoRollBtn.textContent = '🔄 Авто';
+                clearInterval(autoRollInterval); autoRollInterval = null;
+                autoRollBtn.classList.remove('auto-active'); autoRollBtn.textContent = '🔄 Авто';
             } else {
-                autoRollBtn.classList.add('auto-active');
-                autoRollBtn.textContent = '⏹ Стоп';
+                autoRollBtn.classList.add('auto-active'); autoRollBtn.textContent = '⏹ Стоп';
                 rollDice(true, 'normal', true);
-                autoRollInterval = setInterval(() => {
-                    rollDice(true, 'normal', true);
-                }, 3000);
+                autoRollInterval = setInterval(() => rollDice(true, 'normal', true), 3000);
             }
         });
 
-        diceCountSelect.addEventListener('change', () => {
-            pinnedDice = {};
-            rollDice(true, 'fast', false);
-        });
+        diceCountSelect.addEventListener('change', () => rollDice(true, 'fast', false));
         animSelect.addEventListener('change', () => rollDice(true, 'fast', false));
 
         volumeRange.addEventListener('input', () => {
@@ -1518,60 +1287,42 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Space' && !['BUTTON', 'SELECT', 'INPUT'].includes(document.activeElement.tagName)) {
-                e.preventDefault();
-                rollDice(true, 'normal', true);
+                e.preventDefault(); rollDice(true, 'normal', true);
             }
         });
 
         soundSelect.addEventListener('change', (e) => {
             if (e.target.value === 'upload_sound') {
-                soundSelect.value = lastValidSound;
-                soundInput.click();
+                soundSelect.value = lastValidSound; soundInput.click();
             } else {
-                lastValidSound = e.target.value;
-                playRollSound('normal');
+                lastValidSound = e.target.value; playRollSound('normal');
             }
         });
 
         colorPickerInput.addEventListener('input', (e) => {
             const col = e.target.value;
-            bgVideo.style.display = 'none';
-            bgVideo.src = '';
+            bgVideo.style.display = 'none'; bgVideo.src = '';
             document.body.style.background = `radial-gradient(circle at center, ${col}44 0%, #05070b 100%)`;
             rollBtn.style.background = `linear-gradient(135deg, ${col} 0%, #0f172a 100%)`;
         });
 
         themeSelect.addEventListener('change', (e) => {
             const val = e.target.value;
-            if (val === 'upload_image') {
-                themeSelect.value = lastValidTheme;
-                bgImageInput.click();
-                return;
-            }
-            if (val === 'upload_video') {
-                themeSelect.value = lastValidTheme;
-                bgVideoInput.click();
-                return;
-            }
-
+            if (val === 'upload_image') { themeSelect.value = lastValidTheme; bgImageInput.click(); return; }
+            if (val === 'upload_video') { themeSelect.value = lastValidTheme; bgVideoInput.click(); return; }
             lastValidTheme = val;
-
             if (savedBackgrounds[val]) {
                 const bg = savedBackgrounds[val];
                 if (bg.type === 'image') {
-                    bgVideo.style.display = 'none';
-                    bgVideo.src = '';
+                    bgVideo.style.display = 'none'; bgVideo.src = '';
                     document.body.style.background = `url('${bg.url}') center / cover no-repeat fixed`;
                 } else if (bg.type === 'video') {
                     document.body.style.background = '#090d16';
-                    bgVideo.src = bg.url;
-                    bgVideo.style.display = 'block';
+                    bgVideo.src = bg.url; bgVideo.style.display = 'block';
                 }
                 return;
             }
-
-            bgVideo.style.display = 'none';
-            bgVideo.src = '';
+            bgVideo.style.display = 'none'; bgVideo.src = '';
             applyTheme(val);
         });
 
@@ -1579,30 +1330,30 @@
             let btnBg = 'linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%)';
             if (theme === 'space') {
                 document.body.style.background = 'radial-gradient(circle at center, #1e1b4b 0%, #090d16 100%)';
-            } else if (theme === 'cyber') {
-                document.body.style.background = 'linear-gradient(135deg, #09090b 0%, #3b0764 50%, #831843 100%)';
-                btnBg = 'linear-gradient(135deg, #a855f7 0%, #7e22ce 100%)';
-            } else if (theme === 'sunset') {
-                document.body.style.background = 'linear-gradient(180deg, #2e1065 0%, #701a75 50%, #9a3412 100%)';
-                btnBg = 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)';
-            } else if (theme === 'neon') {
-                document.body.style.background = 'linear-gradient(135deg, #022c22 0%, #064e3b 50%, #022f26 100%)';
-                btnBg = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
             } else if (theme === 'saturn') {
                 document.body.style.background = 'radial-gradient(ellipse at center, #fef08a 0%, #d97706 40%, #451a03 100%)';
                 btnBg = 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)';
-            } else if (theme === 'forest') {
-                document.body.style.background = 'linear-gradient(180deg, #052e16 0%, #15803d 60%, #166534 100%)';
-                btnBg = 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)';
             } else if (theme === 'neptune') {
                 document.body.style.background = 'linear-gradient(135deg, #020617 0%, #1d4ed8 50%, #06b6d4 100%)';
                 btnBg = 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)';
+            } else if (theme === 'cyber') {
+                document.body.style.background = 'linear-gradient(135deg, #09090b 0%, #3b0764 50%, #831843 100%)';
+                btnBg = 'linear-gradient(135deg, #a855f7 0%, #7e22ce 100%)';
+            } else if (theme === 'neon') {
+                document.body.style.background = 'linear-gradient(135deg, #022c22 0%, #064e3b 50%, #022f26 100%)';
+                btnBg = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
             } else if (theme === 'cyberarctic') {
                 document.body.style.background = 'linear-gradient(135deg, #082f49 0%, #0369a1 50%, #164e63 100%)';
                 btnBg = 'linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)';
             } else if (theme === 'pinkneon') {
                 document.body.style.background = 'linear-gradient(135deg, #4c0519 0%, #be185d 50%, #831843 100%)';
                 btnBg = 'linear-gradient(135deg, #ec4899 0%, #be185d 100%)';
+            } else if (theme === 'sunset') {
+                document.body.style.background = 'linear-gradient(180deg, #2e1065 0%, #701a75 50%, #9a3412 100%)';
+                btnBg = 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)';
+            } else if (theme === 'forest') {
+                document.body.style.background = 'linear-gradient(180deg, #052e16 0%, #15803d 60%, #166534 100%)';
+                btnBg = 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)';
             } else if (theme === 'fire') {
                 document.body.style.background = 'linear-gradient(135deg, #450a0a 0%, #c2410c 50%, #7c2d12 100%)';
                 btnBg = 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)';
@@ -1614,76 +1365,43 @@
         }
 
         soundInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-
+            const file = e.target.files[0]; if (!file) return;
             stopAllSounds();
             if (customAudioUrl) URL.revokeObjectURL(customAudioUrl);
             customAudioUrl = URL.createObjectURL(file);
-            customAudio = new Audio(customAudioUrl);
-            customAudio.volume = parseFloat(volumeRange.value);
-
+            customAudio = new Audio(customAudioUrl); customAudio.volume = parseFloat(volumeRange.value);
             const group = document.getElementById('customSoundGroup');
             let customOpt = document.getElementById('customSoundOption');
             if (!customOpt) {
-                customOpt = document.createElement('option');
-                customOpt.id = 'customSoundOption';
-                customOpt.value = 'custom';
+                customOpt = document.createElement('option'); customOpt.id = 'customSoundOption'; customOpt.value = 'custom';
                 group.insertBefore(customOpt, group.firstChild);
             }
-            const shortName = file.name.length > 18 ? file.name.slice(0, 15) + '...' : file.name;
-            customOpt.textContent = `🎵 ${shortName}`;
-            soundSelect.value = 'custom';
-            lastValidSound = 'custom';
-            playRollSound('normal');
+            customOpt.textContent = `🎵 ${file.name.length > 18 ? file.name.slice(0, 15) + '...' : file.name}`;
+            soundSelect.value = 'custom'; lastValidSound = 'custom'; playRollSound('normal');
         });
 
         bgImageInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            bgVideo.style.display = 'none';
-            bgVideo.src = '';
-
-            const url = URL.createObjectURL(file);
-            const key = 'bg_' + Date.now();
+            const file = e.target.files[0]; if (!file) return;
+            bgVideo.style.display = 'none'; bgVideo.src = '';
+            const url = URL.createObjectURL(file); const key = 'bg_' + Date.now();
             savedBackgrounds[key] = { type: 'image', url: url };
-
             document.body.style.background = `url('${url}') center / cover no-repeat fixed`;
-
             const group = document.getElementById('customBgsGroup');
-            const newOpt = document.createElement('option');
-            newOpt.value = key;
-            newOpt.textContent = `🖼️ ${file.name.slice(0, 16)}`;
+            const newOpt = document.createElement('option'); newOpt.value = key; newOpt.textContent = `🖼️ ${file.name.slice(0, 16)}`;
             group.insertBefore(newOpt, group.firstChild);
-
-            themeSelect.value = key;
-            lastValidTheme = key;
-            bgImageInput.value = '';
+            themeSelect.value = key; lastValidTheme = key; bgImageInput.value = '';
         });
 
         bgVideoInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-
+            const file = e.target.files[0]; if (!file) return;
             document.body.style.background = '#090d16';
-
-            const url = URL.createObjectURL(file);
-            const key = 'bg_' + Date.now();
+            const url = URL.createObjectURL(file); const key = 'bg_' + Date.now();
             savedBackgrounds[key] = { type: 'video', url: url };
-
-            bgVideo.src = url;
-            bgVideo.style.display = 'block';
-
+            bgVideo.src = url; bgVideo.style.display = 'block';
             const group = document.getElementById('customBgsGroup');
-            const newOpt = document.createElement('option');
-            newOpt.value = key;
-            newOpt.textContent = `🎬 ${file.name.slice(0, 16)}`;
+            const newOpt = document.createElement('option'); newOpt.value = key; newOpt.textContent = `🎬 ${file.name.slice(0, 16)}`;
             group.insertBefore(newOpt, group.firstChild);
-
-            themeSelect.value = key;
-            lastValidTheme = key;
-            bgVideoInput.value = '';
+            themeSelect.value = key; lastValidTheme = key; bgVideoInput.value = '';
         });
 
         applyTheme('space');
