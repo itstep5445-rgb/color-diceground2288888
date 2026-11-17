@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru" data-theme="dark">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,7 @@
             --top-btn-border: rgba(255, 255, 255, 0.18);
             --pill-bg: rgba(255, 255, 255, 0.25);
             --dot-shadow: rgba(0, 0, 0, 0.3);
+            --dice-border: rgba(255, 255, 255, 0.95);
         }
 
         [data-theme="light"] {
@@ -47,6 +48,7 @@
             --top-btn-border: rgba(0, 0, 0, 0.15);
             --pill-bg: rgba(0, 0, 0, 0.2);
             --dot-shadow: rgba(0, 0, 0, 0.15);
+            --dice-border: rgba(15, 23, 42, 0.85);
         }
 
         * {
@@ -175,15 +177,15 @@
             backdrop-filter: blur(20px);
             display: none;
             flex-direction: column;
-            gap: 14px;
-            width: 300px;
+            gap: 12px;
+            width: 310px;
             min-width: 240px;
             min-height: 180px;
             max-width: 92vw;
             max-height: 85vh;
             text-align: left;
             z-index: 60;
-            overflow: hidden;
+            overflow-y: auto;
         }
 
         .popup-window.open {
@@ -419,14 +421,14 @@
             width: var(--dice-size, 82px);
             height: var(--dice-size, 82px);
             border-radius: 24%;
-            border: 3px solid rgba(255, 255, 255, 0.95);
+            border: var(--dice-border-width, 3px) solid var(--dice-border);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 15px 32px rgba(0, 0, 0, 0.35), inset 0 3px 8px rgba(255, 255, 255, 0.45);
             position: relative;
             user-select: none;
-            transition: background-color 0.07s linear, transform 0.18s ease, box-shadow 0.2s ease;
+            transition: background-color 0.07s linear, transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
             animation-duration: var(--anim-dur, 0.45s);
             animation-fill-mode: both;
         }
@@ -661,6 +663,26 @@
             box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
         }
 
+        .border-colors-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .border-color-opt {
+            height: 28px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: transform 0.15s, border-color 0.15s;
+        }
+
+        .border-color-opt:hover {
+            transform: scale(1.1);
+            border-color: #fff;
+        }
+
         input[type="file"] { display: none; }
     </style>
 </head>
@@ -718,7 +740,7 @@
         <div class="resize-handle" data-resize-target="volumePopup" title="Resize">◢</div>
     </div>
 
-    <!-- Окно 3: Палитра, Темы и Кнопки Фонов сверху -->
+    <!-- Окно 3: Палитра, Темы, Обводка и Свои фоны -->
     <div class="popup-window" id="palettePopup" style="right: 20px;">
         <div class="drag-header" data-drag-target="palettePopup">
             <div class="popup-title"><span class="drag-dots">⋮⋮</span> <span data-i18n="themeTitle">🎨 Темы и фон</span></div>
@@ -748,9 +770,19 @@
                 <option value="sunset" data-i18n="thSunset">🌅 [🟠 Закат] Градиент</option>
                 <option value="forest" data-i18n="thForest">🌲 [🟢 Лес] Мох</option>
                 <option value="fire" data-i18n="thFire">🔥 [🔴 Огонь] Жар</option>
-                <option value="gold" data-i18n="✨ Золото">✨ [🟡 Золото] Нуар</option>
+                <option value="gold" data-i18n="thGold">✨ [🟡 Золото] Нуар</option>
             </optgroup>
         </select>
+
+        <div class="popup-title" style="margin-top: 4px;" data-i18n="borderTitle">✏️ Обводка кубиков</div>
+        <div class="border-colors-grid">
+            <div class="border-color-opt" style="background: #ffffff;" data-color="#ffffff" title="Белый"></div>
+            <div class="border-color-opt" style="background: #38bdf8;" data-color="#38bdf8" title="Голубой"></div>
+            <div class="border-color-opt" style="background: #facc15;" data-color="#facc15" title="Желтый"></div>
+            <div class="border-color-opt" style="background: #ef4444;" data-color="#ef4444" title="Красный"></div>
+            <div class="border-color-opt" style="background: #a855f7;" data-color="#a855f7" title="Фиолетовый"></div>
+            <div class="border-color-opt" style="background: #0f172a;" data-color="#0f172a" title="Темный"></div>
+        </div>
 
         <div class="popup-title" style="margin-top: 4px;" data-i18n="customBgsTitle">🖼️ Свои фоны</div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
@@ -780,12 +812,12 @@
             <div class="control-group">
                 <span class="control-label" data-i18n="diceCountLabel">🎲 Количество кубиков</span>
                 <select id="diceCountSelect" class="styled-select">
-                    <option value="1">1 <span data-i18n="diceSingular">кубик</span></option>
-                    <option value="2">2 <span data-i18n="dicePlural">кубика</span></option>
-                    <option value="3" selected>3 <span data-i18n="dicePlural">кубика</span></option>
-                    <option value="4">4 <span data-i18n="dicePlural">кубика</span></option>
-                    <option value="5">5 <span data-i18n="dicePluralGen">кубиков</span></option>
-                    <option value="6">6 <span data-i18n="dicePluralGen">кубиков</span></option>
+                    <option value="1">1 кубик</option>
+                    <option value="2">2 кубика</option>
+                    <option value="3" selected>3 кубика</option>
+                    <option value="4">4 кубика</option>
+                    <option value="5">5 кубиков</option>
+                    <option value="6">6 кубиков</option>
                 </select>
             </div>
 
@@ -856,13 +888,11 @@
                 thForest: "🌲 [🟢 Лес] Мох",
                 thFire: "🔥 [🔴 Огонь] Жар",
                 thGold: "✨ [🟡 Золото] Нуар",
+                borderTitle: "✏️ Обводка кубиков",
                 customBgsTitle: "🖼️ Свои фоны",
                 uploadImgBtn: "🖼️ Картинка",
                 uploadVidBtn: "🎬 Видео",
                 diceCountLabel: "🎲 Количество кубиков",
-                diceSingular: "кубик",
-                dicePlural: "кубика",
-                dicePluralGen: "кубиков",
                 animLabel: "✨ Анимация финиша",
                 animBounce: "🏀 Пружинка",
                 animSpin: "🌀 Поворот 360°",
@@ -874,10 +904,6 @@
                 rollBtnText: "🎲 БРОСИТЬ !",
                 fastBtn: "⚡ Быстро",
                 slowBtn: "🐢 Медленно",
-                colors: {
-                    'КРАСНЫЙ': 'КРАСНЫЙ', 'ОРАНЖЕВЫЙ': 'ОРАНЖЕВЫЙ', 'ЖЕЛТЫЙ': 'ЖЕЛТЫЙ',
-                    'ЗЕЛЕНЫЙ': 'ЗЕЛЕНЫЙ', 'СИНИЙ': 'СИНИЙ', 'ФИОЛЕТОВЫЙ': 'ФИОЛЕТОВЫЙ'
-                }
             },
             en: {
                 histTitle: "📜 Roll History",
@@ -915,13 +941,11 @@
                 thForest: "🌲 [🟢 Forest] Moss",
                 thFire: "🔥 [🔴 Fire] Heat",
                 thGold: "✨ [🟡 Gold] Noir",
+                borderTitle: "✏️ Dice Border",
                 customBgsTitle: "🖼️ Custom Backgrounds",
                 uploadImgBtn: "🖼️ Image",
                 uploadVidBtn: "🎬 Video",
                 diceCountLabel: "🎲 Dice Count",
-                diceSingular: "dice",
-                dicePlural: "dice",
-                dicePluralGen: "dice",
                 animLabel: "✨ Finish Animation",
                 animBounce: "🏀 Bounce",
                 animSpin: "🌀 Spin 360°",
@@ -933,10 +957,6 @@
                 rollBtnText: "🎲 ROLL !",
                 fastBtn: "⚡ Fast",
                 slowBtn: "🐢 Slow",
-                colors: {
-                    'КРАСНЫЙ': 'RED', 'ОРАНЖЕВЫЙ': 'ORANGE', 'ЖЕЛТЫЙ': 'YELLOW',
-                    'ЗЕЛЕНЫЙ': 'GREEN', 'СИНИЙ': 'BLUE', 'ФИОЛЕТОВЫЙ': 'PURPLE'
-                }
             }
         };
 
@@ -949,16 +969,16 @@
                 if (i18nText[lang][key]) el.textContent = i18nText[lang][key];
             });
             updateComboBannerText(false);
-            renderDice();
+            renderHistoryList();
         }
 
         const diceColors = [
-            { nameRu: 'КРАСНЫЙ', nameEn: 'RED', hex: '#ef4444' },
-            { nameRu: 'ОРАНЖЕВЫЙ', nameEn: 'ORANGE', hex: '#f97316' },
-            { nameRu: 'ЖЕЛТЫЙ', nameEn: 'YELLOW', hex: '#eab308' },
-            { nameRu: 'ЗЕЛЕНЫЙ', nameEn: 'GREEN', hex: '#22c55e' },
-            { nameRu: 'СИНИЙ', nameEn: 'BLUE', hex: '#3b82f6' },
-            { nameRu: 'ФИОЛЕТОВЫЙ', nameEn: 'PURPLE', hex: '#a855f7' }
+            { name: 'КРАСНЫЙ',    hex: '#ef4444' },
+            { name: 'ОРАНЖЕВЫЙ',  hex: '#f97316' },
+            { name: 'ЖЕЛТЫЙ',     hex: '#eab308' },
+            { name: 'ЗЕЛЕНЫЙ',    hex: '#22c55e' },
+            { name: 'СИНИЙ',      hex: '#3b82f6' },
+            { name: 'ФИОЛЕТОВЫЙ', hex: '#a855f7' }
         ];
 
         const mainCard = document.getElementById('mainCard');
@@ -1008,7 +1028,6 @@
         let activeIntervals = [];
         let currentRollId = 0;
         let lastValidSound = 'bubble';
-        let lastValidTheme = 'space';
         let rollHistory = [];
         let topZIndex = 65;
 
@@ -1026,6 +1045,15 @@
         darkModeBtn.addEventListener('click', () => setThemeMode('dark'));
         lightModeBtn.addEventListener('click', () => setThemeMode('light'));
         setThemeMode('dark');
+
+        // Смена обводки кубиков
+        document.querySelectorAll('.border-color-opt').forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                const color = e.target.getAttribute('data-color');
+                document.documentElement.style.setProperty('--dice-border', color);
+                document.documentElement.style.setProperty('--dice-border-width', '3.5px');
+            });
+        });
 
         // Переключение языка
         langToggleBtn.addEventListener('click', () => {
@@ -1055,13 +1083,12 @@
                 document.body.style.backgroundSize = 'cover';
                 document.body.style.backgroundPosition = 'center';
                 document.body.style.backgroundAttachment = 'fixed';
-                lastValidTheme = themeName;
             }
         }
         themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
         applyTheme('space');
 
-        // Кнопки загрузки файлов фонов сверху
+        // Кнопки загрузки файлов фонов
         uploadImgBtn.addEventListener('click', () => bgImageInput.click());
         uploadVidBtn.addEventListener('click', () => bgVideoInput.click());
 
@@ -1315,7 +1342,7 @@
             confettiParticles.forEach(p => {
                 p.x += p.vx;
                 p.y += p.vy;
-                p.vy += 0.4; // гравитация
+                p.vy += 0.4;
                 p.rotation += p.vRot;
                 p.alpha -= 0.012;
 
@@ -1351,7 +1378,7 @@
         }
 
         // Бросок кубиков
-        function rollDice(durationMs = 450, isFast = false) {
+        function rollDice(durationMs = 450) {
             currentRollId++;
             const rollId = currentRollId;
 
@@ -1384,24 +1411,22 @@
                 const finalResults = [];
                 const animType = animSelect.value;
 
-                diceElements.forEach((d, idx) => {
+                diceElements.forEach((d) => {
                     d.classList.remove('rolling');
                     const colorObj = diceColors[Math.floor(Math.random() * diceColors.length)];
                     finalResults.push(colorObj);
 
                     d.style.backgroundColor = colorObj.hex;
                     d.classList.remove('anim-bounce', 'anim-spin', 'anim-flip', 'anim-drop', 'anim-flash');
-                    void d.offsetWidth; // сброс анимации
+                    void d.offsetWidth;
                     d.classList.add('anim-' + animType);
                 });
 
                 currentDiceResults = finalResults;
 
-                // Проверка комбо (4+ одинаковых)
                 const counts = {};
                 finalResults.forEach(c => {
-                    let name = currentLang === 'ru' ? c.nameRu : c.nameEn;
-                    counts[name] = (counts[name] || 0) + 1;
+                    counts[c.hex] = (counts[c.hex] || 0) + 1;
                 });
                 let maxMatch = Math.max(...Object.values(counts));
 
@@ -1419,7 +1444,7 @@
         }
 
         rollBtn.addEventListener('click', () => rollDice(450));
-        fastRollBtn.addEventListener('click', () => rollDice(200, true));
+        fastRollBtn.addEventListener('click', () => rollDice(200));
         slowRollBtn.addEventListener('click', () => rollDice(900));
 
         // История бросков
