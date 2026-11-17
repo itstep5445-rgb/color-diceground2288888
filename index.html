@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Dice Pro</title>
+    <title>Color Dice Pro Max</title>
     <style>
         * {
             box-sizing: border-box;
@@ -39,7 +39,7 @@
             display: none;
         }
 
-        /* Канвас для конфетти на весь экран */
+        /* Канвас для конфетти */
         #confettiCanvas {
             position: fixed;
             inset: 0;
@@ -450,7 +450,7 @@
             100% { transform: scale(1); filter: brightness(1); }
         }
 
-        /* Премиальные тактильные кнопки */
+        /* Кнопки управления */
         .buttons-wrapper {
             flex-shrink: 0;
         }
@@ -502,13 +502,13 @@
 
         .speed-buttons-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 12px;
         }
 
         .speed-btn {
-            padding: 13px 16px;
-            font-size: 0.92rem;
+            padding: 13px 14px;
+            font-size: 0.9rem;
             font-weight: 700;
             color: #f8fafc;
             background: linear-gradient(180deg, rgba(51, 65, 85, 0.9) 0%, rgba(30, 41, 59, 0.98) 100%);
@@ -521,7 +521,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .speed-btn:hover {
@@ -764,16 +764,17 @@
             </div>
         </div>
 
-        <div class="combo-banner" id="comboBanner">Собери 4+ одинаковых цвета для салюта! 🎉</div>
+        <div class="combo-banner" id="comboBanner">Нажми ПРОБЕЛ или кнопку броска! 🚀</div>
 
         <div id="diceArena" class="dice-arena"></div>
 
         <div class="buttons-wrapper">
-            <button type="button" id="rollBtn">🎲 БРОСИТЬ !</button>
+            <button type="button" id="rollBtn">🎲 БРОСИТЬ ! (Space)</button>
 
             <div class="speed-buttons-grid">
                 <button type="button" id="fastRollBtn" class="speed-btn">⚡ Быстро</button>
                 <button type="button" id="slowRollBtn" class="speed-btn">🐢 Медленно</button>
+                <button type="button" id="clearArenaBtn" class="speed-btn" title="Очистить и обновить">🧹 Сброс</button>
             </div>
         </div>
 
@@ -798,6 +799,7 @@
         const rollBtn = document.getElementById('rollBtn');
         const fastRollBtn = document.getElementById('fastRollBtn');
         const slowRollBtn = document.getElementById('slowRollBtn');
+        const clearArenaBtn = document.getElementById('clearArenaBtn');
         const comboBanner = document.getElementById('comboBanner');
         const themeSelect = document.getElementById('themeSelect');
         const soundInput = document.getElementById('soundInput');
@@ -837,7 +839,6 @@
         let rollHistory = [];
         let topZIndex = 65;
 
-        // Ресайз холста конфетти
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -845,7 +846,6 @@
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Система конфетти / салюта
         function triggerConfetti() {
             confettiParticles = [];
             const colorsList = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#a855f7', '#ec4899', '#38bdf8', '#facc15'];
@@ -964,7 +964,7 @@
             window.addEventListener('touchend', onEnd);
         });
 
-        // Изменение размера окон
+        // Ресайз окон
         function updateDiceScale() {
             const w = mainCard.offsetWidth;
             const h = mainCard.offsetHeight;
@@ -1187,7 +1187,7 @@
             }
         }
 
-        // Логика роллов и проверка на 4+ одинаковых цветов для конфетти
+        // Логика роллов
         function clearActiveRollProcesses() {
             activeTimers.forEach(id => clearTimeout(id)); activeTimers = [];
             activeIntervals.forEach(id => clearInterval(id)); activeIntervals = [];
@@ -1203,12 +1203,8 @@
 
         function checkCombo(finalColors) {
             mainCard.classList.remove('jackpot-glow');
-            
-            // Считаем сколько раз встречается каждый цвет
             const counts = {};
-            finalColors.forEach(c => {
-                counts[c.hex] = (counts[c.hex] || 0) + 1;
-            });
+            finalColors.forEach(c => { counts[c.hex] = (counts[c.hex] || 0) + 1; });
 
             let maxSame = 0;
             let dominantColorName = '';
@@ -1220,17 +1216,9 @@
                 }
             }
 
-            // Если выпало 4 или более одинаковых цветов
-            if (maxSame >= 4) {
+            if (maxSame >= 4 || (finalColors.length >= 3 && finalColors.every(c => c.hex === finalColors[0].hex))) {
                 mainCard.classList.add('jackpot-glow');
                 comboBanner.textContent = `🎉 САЛЮТ! ВЫПАЛО ${maxSame} КУБИКА (${dominantColorName})!`;
-                comboBanner.classList.add('win');
-                triggerConfetti();
-                return true;
-            } else if (finalColors.length >= 3 && finalColors.every(c => c.hex === finalColors[0].hex)) {
-                // Полный джекпот (если кубиков 3 и все одинаковые)
-                mainCard.classList.add('jackpot-glow');
-                comboBanner.textContent = `🔥 ДЖЕКПОТ! ВСЕ КУБИКИ — ${finalColors[0].name}!`;
                 comboBanner.classList.add('win');
                 triggerConfetti();
                 return true;
@@ -1352,6 +1340,11 @@
         fastRollBtn.addEventListener('click', () => rollDice(true, 'fast', true));
         slowRollBtn.addEventListener('click', () => rollDice(true, 'slow', true));
 
+        // Кнопка быстрого сброса
+        clearArenaBtn.addEventListener('click', () => {
+            rollDice(true, 'fast', false);
+        });
+
         diceCountSelect.addEventListener('change', () => rollDice(true, 'fast', false));
         animSelect.addEventListener('change', () => rollDice(true, 'fast', false));
 
@@ -1359,6 +1352,7 @@
             if (customAudio) customAudio.volume = parseFloat(volumeRange.value);
         });
 
+        // Бросок по пробелу
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Space' && !['BUTTON', 'SELECT', 'INPUT'].includes(document.activeElement.tagName)) {
                 e.preventDefault(); rollDice(true, 'normal', true);
